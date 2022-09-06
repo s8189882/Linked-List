@@ -10,9 +10,10 @@ public class List {
 		
 		List nodeMethods = new List();
 		nodeMethods.addNode(56);
-		nodeMethods.addNode(30);
 		nodeMethods.addNode(70);
 		nodeMethods.printLinkedList();	
+		nodeMethods.insert(30);
+		nodeMethods.printLinkedList();
 	}
 	
 	public void addNode(int element) {
@@ -28,6 +29,17 @@ public class List {
 		}
 	}
 	
+	public void insert(int element) {
+		Node newNode = new Node(element);
+		
+		Node thisNode = head;
+		while (thisNode.data != 56)
+			thisNode = thisNode.next;
+		
+		newNode.next = thisNode.next;
+		thisNode.next = newNode;
+	}
+	
 	public void printLinkedList() {
 		Node thisNode = head;
 		
@@ -41,5 +53,4 @@ public class List {
 			} 
 		}
 	}
-	
 }
