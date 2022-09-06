@@ -14,9 +14,8 @@ public class List {
 		nodeMethods.addNode(70);
 		nodeMethods.printLinkedList();	
 		
-		System.out.println("\nAfter deleting the last element");
-		nodeMethods.pop(70);
-		nodeMethods.printLinkedList();
+		System.out.println("\nSearching for element 30 in the Linked List.");
+		nodeMethods.search(30);
 	}
 	
 	public void addNode(int element) {
@@ -32,8 +31,19 @@ public class List {
 		}
 	}
 	
-	public void insert(int element) {
-		Node newNode = new Node(element);
+	public void search(int findElement) {
+		Node thisNode = head;
+		
+		while (thisNode != null) {
+			if (thisNode.data == findElement) {
+				System.out.println("\nFound element " + findElement + " in the Linked List!");
+			}
+			thisNode = thisNode.next;
+		}	
+	}
+	
+	public void insert(int insertElement) {
+		Node newNode = new Node(insertElement);
 		
 		Node thisNode = head;
 		while (thisNode.data != 56)
