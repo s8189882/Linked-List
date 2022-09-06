@@ -14,8 +14,9 @@ public class List {
 		nodeMethods.addNode(70);
 		nodeMethods.printLinkedList();	
 		
-		System.out.println("\nSearching for element 30 in the Linked List.");
-		nodeMethods.search(30);
+		System.out.println("\nInserting 40 after 30 in the Linked List.");
+		nodeMethods.insert(40, 30);
+		nodeMethods.printLinkedList();
 	}
 	
 	public void addNode(int element) {
@@ -42,11 +43,11 @@ public class List {
 		}	
 	}
 	
-	public void insert(int insertElement) {
+	public void insert(int insertElement, int previous) {
 		Node newNode = new Node(insertElement);
 		
 		Node thisNode = head;
-		while (thisNode.data != 56)
+		while (thisNode.data != previous)
 			thisNode = thisNode.next;
 		
 		newNode.next = thisNode.next;
